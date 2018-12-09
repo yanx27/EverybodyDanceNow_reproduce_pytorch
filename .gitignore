@@ -112,3 +112,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+src/pix2pixHD/models/vgg19-dcbb9e9d.pth.crdownload
+src/PoseEstimation/network/weight/pose_model.pth
