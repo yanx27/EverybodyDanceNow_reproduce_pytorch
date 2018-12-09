@@ -1,6 +1,6 @@
 # Every body dance now pytorch
 
-Written by Peihuan Wu, Jinghong Lin, Wei Qing, Yutao Liao and Yan Xu
+* Written by Peihuan Wu, Jinghong Lin, Wei Qing, Yutao Liao and Yan Xu
 
 * Download vgg19-dcbb9e9d.pth.crdownload and put it in ./src/pix2pixHD/models/   link: https://pan.baidu.com/s/1XMZpSY_UOIwFbN1NXfKEpA   code：agum 
 
