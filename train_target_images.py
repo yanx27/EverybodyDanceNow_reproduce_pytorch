@@ -24,11 +24,9 @@ torch.backends.cudnn.benchmark = True
 torch.cuda.set_device(0)
 
 def main():
-    with open(mainpath + '/data/train_opt.pkl', mode='rb') as f:
+    with open('./data/train_opt.pkl', mode='rb') as f:
         opt = pickle.load(f)
 
-    opt.checkpoints_dir = mainpath + '/checkpoints/'
-    opt.dataroot = mainpath + '/data/target/train/'
 
     iter_path = os.path.join(opt.checkpoints_dir, opt.name, 'iter.txt')
 
