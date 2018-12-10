@@ -16,17 +16,17 @@ save_dir.mkdir(exist_ok=True)
 img_dir = save_dir.joinpath('images')
 img_dir.mkdir(exist_ok=True)
 
-# if len(os.listdir('./data/source/images'))<100:
-#     cap = cv2.VideoCapture(str(save_dir.joinpath('mv.mp4')))
-#     i = 0
-#     while (cap.isOpened()):
-#         flag, frame = cap.read()
-#         if flag == False or i >= 1000:
-#             break
-#         cv2.imwrite(str(img_dir.joinpath('img_%d.png' % i)), frame)
-#         if i%100 == 0:
-#             print('Has generated %d picetures'%i)
-#         i += 1
+if len(os.listdir('./data/source/images'))<100:
+    cap = cv2.VideoCapture(str(save_dir.joinpath('mv.mp4')))
+    i = 0
+    while (cap.isOpened()):
+        flag, frame = cap.read()
+        if flag == False or i >= 1000:
+            break
+        cv2.imwrite(str(img_dir.joinpath('img_%d.png' % i)), frame)
+        if i%100 == 0:
+            print('Has generated %d picetures'%i)
+        i += 1
 
 '''Pose estimation (OpenPose)'''
 import numpy as np
