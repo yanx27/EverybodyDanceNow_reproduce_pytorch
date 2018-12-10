@@ -7,23 +7,25 @@ from pathlib import Path
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = "1"
 
-openpose_dir = Path('src/PoseEstimation/')
-mainpath = os.getcwd()
+openpose_dir = Path('./src/PoseEstimation/')
 
-save_dir = Path(mainpath+'/data/target/')
+
+save_dir = Path('./data/target/')
 save_dir.mkdir(exist_ok=True)
 
 img_dir = save_dir.joinpath('images')
 img_dir.mkdir(exist_ok=True)
 
-if len(os.listdir(mainpath+'/data/target/images'))<100:
+if len(os.listdir('./data/target/images'))<100:
     cap = cv2.VideoCapture(str(save_dir.joinpath('mv.mp4')))
     i = 0
     while (cap.isOpened()):
         flag, frame = cap.read()
-        if flag == False and i == 1200:
+        if flag == False or i >= 1000:
             break
         cv2.imwrite(str(img_dir.joinpath('img_%d.png' % i)), frame)
+        if i%100 == 0:
+            print('Has generated %d picetures'%i)
         i += 1
 
 import sys
