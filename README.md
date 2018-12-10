@@ -9,5 +9,8 @@
 * Put source video mv.mp4 in ./data/source/ and run make_source_images.py
 * Put target video mv.mp4 in ./data/target/ and run make_target_images.py
 * Run train_target_images.py and check loss and full training process in ./checkpoints/
+* Run transfer.py and get results in ./result
+* Run make_gif.py and make result pictures to gif picture
+
 * Reference by [pytorch-EverybodyDanceNow](https://github.com/nyoki-mtl/pytorch-EverybodyDanceNow)
  
