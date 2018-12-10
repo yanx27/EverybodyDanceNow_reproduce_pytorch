@@ -22,9 +22,6 @@ from util import html
 
 with open('./data/test_opt.pkl', mode='rb') as f:
     opt = pickle.load(f)
-opt.checkpoints_dir = './checkpoints/'
-opt.dataroot = './data/source/'
-opt.results_dir='./results/'
 
 iter_path = os.path.join(opt.checkpoints_dir, opt.name, 'iter.txt')
 
