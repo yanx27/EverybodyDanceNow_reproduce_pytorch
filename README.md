@@ -2,6 +2,8 @@
 
 * Written by Peihuan Wu, Jinghong Lin, Wei Qing, Yutao Liao and Yan Xu
 
+![](https://github.com/CUHKSZ-TQL/Every_body_dance_now_pytorch/blob/master/result/output.gif)
+
 * Download vgg19-dcbb9e9d.pth.crdownload and put it in `./src/pix2pixHD/models/`  <br>Link: https://pan.baidu.com/s/1XMZpSY_UOIwFbN1NXfKEpA   code：agum 
 
 * Download pose_model.pth and put it in `./src/PoseEstimation/network/weight/`   <br>Link: https://pan.baidu.com/s/1V68pNSzeaey9OCtVkO_f4Q   code：yf2x 
