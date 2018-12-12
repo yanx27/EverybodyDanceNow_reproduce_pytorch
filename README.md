@@ -2,7 +2,7 @@
 
 * Written by Peihuan Wu, Jinghong Lin, Wei Qing, Yutao Liao and Yan Xu
 
-![](https://github.com/CUHKSZ-TQL/Every_body_dance_now_pytorch/blob/master/result/output.gif)
+![](https://github.com/CUHKSZ-TQL/Pose2Pose/blob/master/picture/output.gif)
 
 * Download vgg19-dcbb9e9d.pth.crdownload and put it in `./src/pix2pixHD/models/`  <br>Link: https://pan.baidu.com/s/1XMZpSY_UOIwFbN1NXfKEpA   code：agum 
 
