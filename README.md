@@ -16,3 +16,6 @@
 
 * Reference by [pytorch-EverybodyDanceNow](https://github.com/nyoki-mtl/pytorch-EverybodyDanceNow)
  
+---20181212----
+如果要继续训练要设置
+`opt.load_pretrain = './checkpoints/target/`
