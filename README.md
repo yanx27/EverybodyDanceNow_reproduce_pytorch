@@ -1,6 +1,6 @@
 # Every body dance now pytorch
 
-Written by Peihuan Wu, Jinghong Lin, Wei Qing, Yutao Liao and Yan Xu, reference by [pytorch-EverybodyDanceNow](https://github.com/nyoki-mtl/pytorch-EverybodyDanceNow), we write normalization part and some improvement.
+Reference by [pytorch-EverybodyDanceNow](https://github.com/nyoki-mtl/pytorch-EverybodyDanceNow), we write normalization part and add some improvement.
 
 ## Result
 ![Result](output.gif)
