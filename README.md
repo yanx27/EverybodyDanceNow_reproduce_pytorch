@@ -1,6 +1,6 @@
 # Every body dance now pytorch
 
-Written by Peihuan Wu, Jinghong Lin, Wei Qing, Yutao Liao and Yan Xu, reference by [pytorch-EverybodyDanceNow](https://github.com/nyoki-mtl/pytorch-EverybodyDanceNow)
+* Written by Peihuan Wu, Jinghong Lin, Wei Qing, Yutao Liao and Yan Xu, reference by [pytorch-EverybodyDanceNow](https://github.com/nyoki-mtl/pytorch-EverybodyDanceNow), we write normalization part and some improvement.
 
 ## Result
 ![Result](result/output.gif)
@@ -20,6 +20,6 @@ Written by Peihuan Wu, Jinghong Lin, Wei Qing, Yutao Liao and Yan Xu, reference 
 * Run `make_gif.py` and make result pictures to gif picture
 
 ## Environments
-python3.5.4 
-pytorch: 0.4.1  
-opencv: 3.4.1  
+python: 3.5.4 <br>
+pytorch: 0.4.1  <br>
+opencv: 3.4.1  <br>
