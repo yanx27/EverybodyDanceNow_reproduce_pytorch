@@ -1,6 +1,6 @@
 # Every body dance now pytorch
 
-* Written by Peihuan Wu, Jinghong Lin, Wei Qing, Yutao Liao and Yan Xu, reference by [pytorch-EverybodyDanceNow](https://github.com/nyoki-mtl/pytorch-EverybodyDanceNow)
+Written by Peihuan Wu, Jinghong Lin, Wei Qing, Yutao Liao and Yan Xu, reference by [pytorch-EverybodyDanceNow](https://github.com/nyoki-mtl/pytorch-EverybodyDanceNow)
 
 ## Result
 ![Result](result/output.gif)
@@ -18,3 +18,8 @@
 * Run `normalization.py` rescale the label images, you can use two sample images from `./data/target/train/train_label/` and `./data/source/test_label_ori/` to complete normalization between two skeleton size
 * Run `transfer.py` and get results in `./result`
 * Run `make_gif.py` and make result pictures to gif picture
+
+## Environments
+python3.5.4 
+pytorch: 0.4.1  
+opencv: 3.4.1  
