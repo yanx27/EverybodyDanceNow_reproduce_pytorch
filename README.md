@@ -10,7 +10,7 @@
 
 * Download pose_model.pth and put it in `./src/PoseEstimation/network/weight/`   <br>Link: https://pan.baidu.com/s/1V68pNSzeaey9OCtVkO_f4Q   code：yf2x 
 
-* Experimental video can be download from ：https://pan.baidu.com/s/15_PJzFf-rRHMkwji9T20gQ  code：leos 
+* Source video can be download from ：https://pan.baidu.com/s/15_PJzFf-rRHMkwji9T20gQ  code：leos 
 
 ## Full process
 * Put source video mv.mp4 in `./data/source/` and run `make_source_images.py`, the label images will save in `./data/source/test_label_ori/` 
