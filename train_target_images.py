@@ -7,8 +7,10 @@ import sys
 from collections import OrderedDict
 from torch.autograd import Variable
 from pathlib import Path
+import warnings
 
-os.environ['CUDA_VISIBLE_DEVICES'] = "3"
+warnings.filterwarnings('ignore')
+os.environ['CUDA_VISIBLE_DEVICES'] = "2"
 mainpath = os.getcwd()
 pix2pixhd_dir = Path(mainpath+'/src/pix2pixHD/')
 sys.path.append(str(pix2pixhd_dir))
@@ -27,6 +29,11 @@ def main():
     with open('./data/train_opt.pkl', mode='rb') as f:
         opt = pickle.load(f)
 
+    opt.tf_log = True
+    opt.checkpoints_dir = './checkpoints/'
+    opt.dataroot = './data/target/train_last'
+    opt.load_pretrain = './checkpoints/target_huang/'
+    opt.name = 'target_huang'
 
     iter_path = os.path.join(opt.checkpoints_dir, opt.name, 'iter.txt')
 
