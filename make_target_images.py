@@ -5,7 +5,9 @@ import torch
 from tqdm import tqdm
 from pathlib import Path
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = "1"
+import warnings
+warnings.filterwarnings('ignore')
+os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 
 openpose_dir = Path('./src/PoseEstimation/')
 
@@ -17,13 +19,13 @@ img_dir = save_dir.joinpath('images')
 img_dir.mkdir(exist_ok=True)
 
 if len(os.listdir('./data/target/images'))<100:
-    cap = cv2.VideoCapture(str(save_dir.joinpath('mv.mp4')))
+    cap = cv2.VideoCapture(str(save_dir.joinpath('mv2.mp4')))
     i = 0
     while (cap.isOpened()):
         flag, frame = cap.read()
-        if flag == False or i >= 1000:
+        if flag == False :
             break
-        cv2.imwrite(str(img_dir.joinpath('img_%d.png' % i)), frame)
+        cv2.imwrite(str(img_dir.joinpath('{:05}.png'.format(i))), frame)
         if i%100 == 0:
             print('Has generated %d picetures'%i)
         i += 1
@@ -39,7 +41,7 @@ from evaluate.coco_eval import get_multiplier, get_outputs
 from openpose_utils import remove_noise, get_pose
 
 weight_name = './src/PoseEstimation/network/weight/pose_model.pth'
-
+print('load model...')
 model = get_model('vgg19')
 model.load_state_dict(torch.load(weight_name))
 model = torch.nn.DataParallel(model).cuda()
@@ -63,8 +65,8 @@ train_img_dir.mkdir(exist_ok=True)
 train_label_dir = train_dir.joinpath('train_label')
 train_label_dir.mkdir(exist_ok=True)
 
-for idx in tqdm(range(150, 1150)):
-    img_path = img_dir.joinpath('img_%d.png'%idx)
+for idx in tqdm(range(0,2500)):
+    img_path = img_dir.joinpath('{:05}.png'.format(idx))
     img = cv2.imread(str(img_path))
     shape_dst = np.min(img.shape[:2])
     oh = (img.shape[0] - shape_dst) // 2
@@ -82,7 +84,7 @@ for idx in tqdm(range(150, 1150)):
     param = {'thre1': 0.1, 'thre2': 0.05, 'thre3': 0.5}
     label = get_pose(param, heatmap, paf)
 
-    cv2.imwrite(str(train_img_dir.joinpath('img_%d.png'%idx)), img)
-    cv2.imwrite(str(train_label_dir.joinpath('label_%d.png'%idx)), label)
+    cv2.imwrite(str(train_img_dir.joinpath('{:05}.png'.format(idx))), img)
+    cv2.imwrite(str(train_label_dir.joinpath('{:05}.png'.format(idx))), label)
 
 torch.cuda.empty_cache()
