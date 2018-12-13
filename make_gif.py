@@ -10,10 +10,11 @@ import matplotlib
 
 source_dir = Path('./data/source/test_img')
 target_dir = Path('./results/target/test_latest/images')
+label_dir = Path('./data/source/test_label_ori')
 
 source_img_paths = sorted(source_dir.iterdir())
 target_synth_paths = sorted(target_dir.glob('*synthesized*'))
-target_label_paths = sorted(target_dir.glob('*input*'))
+target_label_paths = sorted(label_dir.iterdir())
 
 
 def animate(nframe):
