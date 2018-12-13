@@ -3,7 +3,7 @@
 * Written by Peihuan Wu, Jinghong Lin, Wei Qing, Yutao Liao and Yan Xu, reference by [pytorch-EverybodyDanceNow](https://github.com/nyoki-mtl/pytorch-EverybodyDanceNow), we write normalization part and some improvement.
 
 ## Result
-![Result](result/output.gif)
+![Result](output.gif)
 
 ## Pre-trained models and experimental video
 * Download vgg19-dcbb9e9d.pth.crdownload and put it in `./src/pix2pixHD/models/`  <br>Link: https://pan.baidu.com/s/1XMZpSY_UOIwFbN1NXfKEpA   code：agum 
