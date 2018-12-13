@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import cv2
 
 target_img = cv2.imread('./data/target/train/train_label/02497.png')[:,:,0]
-source_img = cv2.imread('./data/source/test_label/00000.png')[:,:,0]
+source_img = cv2.imread('./data/source/test_label_ori/00000.png')[:,:,0]
 
 plt.subplot(121)
 plt.imshow(target_img)
@@ -30,7 +30,8 @@ target_head_y = target_head[1]
 
 source_head,source_height = get_scale(source_img)
 
-path = './data/source/test_label/'
+path = './data/source/test_label_ori/'
+output = './data/source/test_label/'
 for img_dir in tqdm(os.listdir(path)):
     img = cv2.imread(path+img_dir)
     source_rsize = cv2.resize(img,
@@ -45,5 +46,7 @@ for img_dir in tqdm(os.listdir(path)):
 
     new_source = source_pad[
                  (source_head_rs_x - target_head_x):(source_head_rs_x + (target_img.shape[0] - target_head_x)),
-                 (source_head_rs_y - target_head_y):(source_head_rs_y + (target_img.shape[1] - target_head_y))]
-    cv2.imwrite(path+img_dir,new_source)
+                 int((source_pad.shape[1] - target_img.shape[1])/2):int((source_pad.shape[1]-(source_pad.shape[1] - target_img.shape[1])/2))
+                 ]
+
+    cv2.imwrite(output+img_dir,new_source)
