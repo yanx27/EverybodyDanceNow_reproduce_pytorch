@@ -42,9 +42,9 @@ def torch2numpy(tensor):
     
 if __name__ == '__main__':
     torch.backends.cudnn.benchmark = True
-    dataset_dir = '../datasets/cardio_dance_test'
-    pose_name = '../datasets/cardio_dance_test/poses_test.npy'
-    ckpt_dir = './checkpoints'
+    dataset_dir = '../data/face'
+    pose_name = '../data/target/pose.npy'
+    ckpt_dir = '../checkpoints/yxu_face'
     result_dir = './results'
 
     image_folder = dataset.ImageFolderDataset(dataset_dir, cache=os.path.join(dataset_dir, 'local.db'), is_test=True)
