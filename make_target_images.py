@@ -68,7 +68,7 @@ train_head_dir = train_dir.joinpath('head_img')
 train_head_dir.mkdir(exist_ok=True)
 
 pose_cords = []
-for idx in tqdm(range(10)):
+for idx in tqdm(range(2000)):
     img_path = img_dir.joinpath('{:05}.png'.format(idx))
     img = cv2.imread(str(img_path))
     shape_dst = np.min(img.shape[:2])
