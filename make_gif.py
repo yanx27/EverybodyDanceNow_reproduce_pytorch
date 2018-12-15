@@ -47,6 +47,6 @@ anim = ani.FuncAnimation(fig, animate, frames=len(target_label_paths), interval=
 plt.close()
 
 js_anim = HTML(anim.to_jshtml())
-
+ 
 
 anim.save("output.gif", writer="imagemagick")
