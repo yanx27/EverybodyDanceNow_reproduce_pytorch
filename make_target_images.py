@@ -7,7 +7,7 @@ from pathlib import Path
 import os
 import warnings
 warnings.filterwarnings('ignore')
-os.environ['CUDA_VISIBLE_DEVICES'] = "0"
+os.environ['CUDA_VISIBLE_DEVICES'] = "3"
 
 openpose_dir = Path('./src/PoseEstimation/')
 
@@ -64,8 +64,11 @@ train_img_dir = train_dir.joinpath('train_img')
 train_img_dir.mkdir(exist_ok=True)
 train_label_dir = train_dir.joinpath('train_label')
 train_label_dir.mkdir(exist_ok=True)
+train_head_dir = train_dir.joinpath('head_img')
+train_head_dir.mkdir(exist_ok=True)
 
-for idx in tqdm(range(0,2500)):
+pose_cords = []
+for idx in tqdm(range(10)):
     img_path = img_dir.joinpath('{:05}.png'.format(idx))
     img = cv2.imread(str(img_path))
     shape_dst = np.min(img.shape[:2])
@@ -78,13 +81,23 @@ for idx in tqdm(range(0,2500)):
     with torch.no_grad():
         paf, heatmap = get_outputs(multiplier, img, model, 'rtpose')
     r_heatmap = np.array([remove_noise(ht)
-                          for ht in heatmap.transpose(2, 0, 1)[:-1]]) \
-        .transpose(1, 2, 0)
+                          for ht in heatmap.transpose(2, 0, 1)[:-1]]).transpose(1, 2, 0)
     heatmap[:, :, :-1] = r_heatmap
     param = {'thre1': 0.1, 'thre2': 0.05, 'thre3': 0.5}
-    label = get_pose(param, heatmap, paf)
+    #TODO get_pose
+    label, cord = get_pose(param, heatmap, paf)
+    index = 13
+    pose_cords.append(cord[index])
+    crop_size = 25
+
+    head = img[int(cord[index][1] - crop_size): int(cord[index][1] + crop_size),
+           int(cord[index][0] - crop_size): int(cord[index][0] + crop_size), :]
+    plt.imshow(head)
+    plt.savefig(str(train_head_dir.joinpath('pose_{}.jpg'.format(idx))))
 
     cv2.imwrite(str(train_img_dir.joinpath('{:05}.png'.format(idx))), img)
     cv2.imwrite(str(train_label_dir.joinpath('{:05}.png'.format(idx))), label)
 
+pose_cords = np.array(pose_cords, dtype=np.int)
+np.save(str((save_dir.joinpath('pose.npy'))), pose_cords)
 torch.cuda.empty_cache()
