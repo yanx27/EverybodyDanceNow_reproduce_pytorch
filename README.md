@@ -24,6 +24,6 @@ Written by Peihuan Wu, Jinghong Lin, Wei Qing, Yutao Liao and Yan Xu, reference 
 * Run `make_gif.py` and make result pictures to gif picture
 
 ## Environments
-python: 3.5.4 <br>
+python: 3.6.5 <br>
 pytorch: 0.4.1  <br>
-opencv: 3.4.1  <br>
+opencv: 3.4.4  <br>
