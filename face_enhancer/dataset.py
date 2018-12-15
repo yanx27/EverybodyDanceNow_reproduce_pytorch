@@ -45,8 +45,7 @@ class FaceCropDataset(Dataset):
         # skip over bad items
         while True:
             real_img, fake_img = self.image_dataset[item]
-            pose = self.poses[item, ...]
-            head_pos = pose
+            head_pos = self.poses[item]
             if head_pos[0] == -1 or head_pos[1] == -1:
                 item = (item + 1) % len(self.image_dataset)
             else:
@@ -62,9 +61,10 @@ class FaceCropDataset(Dataset):
         top = top if top >= 0 else 0
         top = size[0] - self.crop_size if top + self.crop_size > size[0] else top
 
+
         real_head = None if self.image_dataset.is_test else \
-                    self.transform(real_img[top: top + self.crop_size, left: left + self.crop_size, :])
-        fake_head = self.transform(fake_img[top: top + self.crop_size, left: left + self.crop_size, :])
+                    self.transform(real_img[left: left + self.crop_size, top: top + self.crop_size,  :])
+        fake_head = self.transform(fake_img[left: left + self.crop_size, top: top + self.crop_size,  :])
 
         # from matplotlib.pyplot import imshow, show
         # imshow(real_head.numpy().transpose((2,1,0)))
