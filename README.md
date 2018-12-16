@@ -26,9 +26,9 @@ Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including 
 * Run `make_gif.py` and make result pictures to gif picture
 
 ## Environments
-Python3.6.5 <br>
-Pytorch0.4.1  <br>
-OpenCV3.4.4  <br>
+Python 3.6.5 <br>
+Pytorch 0.4.1  <br>
+OpenCV 3.4.4  <br>
 
 ## Reference
 Reference by [pytorch-EverybodyDanceNow](https://github.com/nyoki-mtl/pytorch-EverybodyDanceNow),
