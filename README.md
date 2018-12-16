@@ -16,7 +16,7 @@ Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including 
 
 ## Full process
 * Put source video mv.mp4 in `./data/source/` and run `make_source.py`, the label images will save in `./data/source/test_label_ori/` 
-* Put target video mv.mp4 in `./data/target/` and run `make_target.py`, pose.npy will save in `./data/target/`, which contain the coordinate of very face.
+* Put target video mv.mp4 in `./data/target/` and run `make_target.py`, pose.npy will save in `./data/target/`, which contain the coordinate of each face.
 * Run `train_pose2vid.py` and check loss and full training process in `./checkpoints/`
 * If you break the traning and want to continue last training, set `load_pretrain = './checkpoints/target/` in `./src/config/train_opt.py`
 * Run `normalization.py` rescale the label images, you can use two sample images from `./data/target/train/train_label/` and `./data/source/test_label_ori/` to complete normalization between two skeleton size
