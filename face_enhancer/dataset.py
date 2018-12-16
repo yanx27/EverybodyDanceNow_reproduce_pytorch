@@ -31,7 +31,7 @@ class ImageFolderDataset(Dataset):
         return len(self.images)
 
 
-class FaceCropDataset(Dataset):
+class FaceCropDataset(Dataset): #TODO FaceCropDataset
     def __init__(self, image_dataset, pose_file, transform, crop_size=96):
         self.image_dataset = image_dataset
         self.transform = transform
@@ -53,18 +53,18 @@ class FaceCropDataset(Dataset):
 
         # crop head image
         size = self.image_dataset.size
-        left = int(head_pos[1] - self.crop_size / 2)  # don't suppose left will go out of bound eh?
+        left = int(head_pos[0] - self.crop_size / 2)  # don't suppose left will go out of bound eh?
         left = left if left >= 0 else 0
         left = size[1] - self.crop_size if left + self.crop_size > size[1] else left
 
-        top = int(head_pos[0] - self.crop_size / 2)
+        top = int(head_pos[1] - self.crop_size / 2)
         top = top if top >= 0 else 0
         top = size[0] - self.crop_size if top + self.crop_size > size[0] else top
 
 
         real_head = None if self.image_dataset.is_test else \
-                    self.transform(real_img[left: left + self.crop_size, top: top + self.crop_size,  :])
-        fake_head = self.transform(fake_img[left: left + self.crop_size, top: top + self.crop_size,  :])
+                    self.transform(real_img[top: top + self.crop_size, left: left + self.crop_size,  :])
+        fake_head = self.transform(fake_img[top: top + self.crop_size, left: left + self.crop_size,  :])
 
         # from matplotlib.pyplot import imshow, show
         # imshow(real_head.numpy().transpose((2,1,0)))
