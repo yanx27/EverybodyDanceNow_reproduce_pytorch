@@ -53,11 +53,11 @@ class FaceCropDataset(Dataset):
 
         # crop head image
         size = self.image_dataset.size
-        left = int(head_pos[1] - self.crop_size / 2)  # don't suppose left will go out of bound eh?
+        left = int(head_pos[0] - self.crop_size / 2)  # don't suppose left will go out of bound eh?
         left = left if left >= 0 else 0
         left = size[1] - self.crop_size if left + self.crop_size > size[1] else left
 
-        top = int(head_pos[0] - self.crop_size / 2)
+        top = int(head_pos[1] - self.crop_size / 2)
         top = top if top >= 0 else 0
         top = size[0] - self.crop_size if top + self.crop_size > size[0] else top
 
