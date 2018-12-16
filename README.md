@@ -1,6 +1,6 @@
 # EverybodyDanceNow reproduced in pytorch
 
-Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, reference by [pytorch-EverybodyDanceNow](https://github.com/nyoki-mtl/pytorch-EverybodyDanceNow), we add normalization  and face enhancement parts.
+Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including normalization and face enhancement parts.
 
 ## Result
 ![Result](output.gif)
@@ -29,3 +29,6 @@ Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, reference 
 python: 3.6.5 <br>
 pytorch: 0.4.1  <br>
 opencv: 3.4.4  <br>
+
+## Reference
+Reference by [pytorch-EverybodyDanceNow](https://github.com/nyoki-mtl/pytorch-EverybodyDanceNow),
