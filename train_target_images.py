@@ -2,7 +2,6 @@ import os
 import numpy as np
 import torch
 import time
-import pickle
 import sys
 from collections import OrderedDict
 from torch.autograd import Variable
@@ -10,33 +9,24 @@ from pathlib import Path
 import warnings
 
 warnings.filterwarnings('ignore')
-os.environ['CUDA_VISIBLE_DEVICES'] = "2"
 mainpath = os.getcwd()
 pix2pixhd_dir = Path(mainpath+'/src/pix2pixHD/')
 sys.path.append(str(pix2pixhd_dir))
 
-from options.train_options import TrainOptions
+
 from data.data_loader import CreateDataLoader
 from models.models import create_model
 import util.util as util
 from util.visualizer import Visualizer
+import src.config.train_opt as opt
 
+os.environ['CUDA_VISIBLE_DEVICES'] = "3"
 torch.multiprocessing.set_sharing_strategy('file_system')
 torch.backends.cudnn.benchmark = True
-torch.cuda.set_device(0)
+
 
 def main():
-    with open('./data/train_opt.pkl', mode='rb') as f:
-        opt = pickle.load(f)
-
-    opt.tf_log = True
-    opt.checkpoints_dir = './checkpoints/'
-    opt.dataroot = './data/target/train_last'
-    opt.load_pretrain = './checkpoints/target_huang/'
-    opt.name = 'target_huang'
-
     iter_path = os.path.join(opt.checkpoints_dir, opt.name, 'iter.txt')
-
     data_loader = CreateDataLoader(opt)
     dataset = data_loader.load_data()
     dataset_size = len(data_loader)
@@ -87,7 +77,6 @@ def main():
             loss_D.backward()
             model.optimizer_D.step()
 
-            # call(["nvidia-smi", "--format=csv", "--query-gpu=memory.used,memory.free"])
 
             ############## Display results and errors ##########
             ### print out errors
@@ -114,7 +103,6 @@ def main():
                 break
 
         # end of epoch
-        iter_end_time = time.time()
         print('End of epoch %d / %d \t Time Taken: %d sec' %
               (epoch, opt.niter + opt.niter_decay, time.time() - epoch_start_time))
 
