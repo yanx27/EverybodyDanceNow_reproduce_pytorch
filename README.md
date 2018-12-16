@@ -22,7 +22,7 @@ Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including 
 * Run `normalization.py` rescale the label images, you can use two sample images from `./data/target/train/train_label/` and `./data/source/test_label_ori/` to complete normalization between two skeleton size
 * Run `transfer.py` and get results in `./result`
 * Create `./data/face/test_sync` and `./data/face/test_real`, then put the same person's generated pictures and the original pictures in them.
-* Run `./face_enhancer/main.py` train face enhancer and run`./face_enhancer/enhance.py` to gain result
+* Run `./face_enhancer/main.py` train face enhancer and run`./face_enhancer/enhance.py` to gain results
 * Run `make_gif.py` and make result pictures to gif picture
 
 ## Environments
