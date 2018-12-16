@@ -15,9 +15,9 @@ Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including 
 * Download pre-trained vgg_16 for face enhancement https://pan.baidu.com/s/1RrcLjEtl4yJ40-4h9sZaDQ  code：62y0 and put in `./face_enhancer/`
 
 ## Full process
-* Put source video mv.mp4 in `./data/source/` and run `make_source_images.py`, the label images will save in `./data/source/test_label_ori/` 
-* Put target video mv.mp4 in `./data/target/` and run `make_target_images.py`, pose.npy will save in `./data/target/`, which contain the coordinate of very face.
-* Run `train_target_images.py` and check loss and full training process in `./checkpoints/`
+* Put source video mv.mp4 in `./data/source/` and run `make_source.py`, the label images will save in `./data/source/test_label_ori/` 
+* Put target video mv.mp4 in `./data/target/` and run `make_target.py`, pose.npy will save in `./data/target/`, which contain the coordinate of very face.
+* Run `train_pose2vid.py` and check loss and full training process in `./checkpoints/`
 * If you break the traning and want to continue last training, set `opt.load_pretrain = './checkpoints/target/`
 * Run `normalization.py` rescale the label images, you can use two sample images from `./data/target/train/train_label/` and `./data/source/test_label_ori/` to complete normalization between two skeleton size
 * Run `transfer.py` and get results in `./result`
