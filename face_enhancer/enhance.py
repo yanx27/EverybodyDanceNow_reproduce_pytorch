@@ -1,9 +1,7 @@
 import model
 import dataset
 from trainer import Trainer
-
 import os
-
 import torch
 from torch.utils.data import DataLoader
 import torchvision.transforms as transforms
