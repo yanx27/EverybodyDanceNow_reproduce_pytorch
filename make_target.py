@@ -19,7 +19,7 @@ img_dir = save_dir.joinpath('images')
 img_dir.mkdir(exist_ok=True)
 
 if len(os.listdir('./data/target/images'))<100:
-    cap = cv2.VideoCapture(str(save_dir.joinpath('fang.mp4')))
+    cap = cv2.VideoCapture(str(save_dir.joinpath('mv.mp4')))
     i = 0
     while (cap.isOpened()):
         flag, frame = cap.read()
