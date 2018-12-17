@@ -19,7 +19,7 @@ img_dir = save_dir.joinpath('images')
 img_dir.mkdir(exist_ok=True)
 
 if len(os.listdir('./data/target/images'))<100:
-    cap = cv2.VideoCapture(str(save_dir.joinpath('mv2.mp4')))
+    cap = cv2.VideoCapture(str(save_dir.joinpath('fang.mp4')))
     i = 0
     while (cap.isOpened()):
         flag, frame = cap.read()
@@ -68,7 +68,7 @@ train_head_dir = train_dir.joinpath('head_img')
 train_head_dir.mkdir(exist_ok=True)
 
 pose_cords = []
-for idx in tqdm(range(2000)):
+for idx in tqdm(range(len(os.listdir(str(img_dir))))):
     img_path = img_dir.joinpath('{:05}.png'.format(idx))
     img = cv2.imread(str(img_path))
     shape_dst = np.min(img.shape[:2])
@@ -87,11 +87,15 @@ for idx in tqdm(range(2000)):
     #TODO get_pose
     label, cord = get_pose(param, heatmap, paf)
     index = 13
-    pose_cords.append(cord[index])
     crop_size = 25
+    try:
+        head_cord = cord[index]
+    except:
+        head_cord = pose_cords[-1] # if there is not head point in picture, use last frame
 
-    head = img[int(cord[index][1] - crop_size): int(cord[index][1] + crop_size),
-           int(cord[index][0] - crop_size): int(cord[index][0] + crop_size), :]
+    pose_cords.append(head_cord)
+    head = img[int(head_cord[1] - crop_size): int(head_cord[1] + crop_size),
+           int(head_cord[0] - crop_size): int(head_cord[0] + crop_size), :]
     plt.imshow(head)
     plt.savefig(str(train_head_dir.joinpath('pose_{}.jpg'.format(idx))))
 
