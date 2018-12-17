@@ -24,7 +24,8 @@ Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including 
 * Create `./data/face/test_sync` and `./data/face/test_real`, then put the same person's generated pictures and the original pictures in them.
 * Run `./face_enhancer/main.py` train face enhancer and run`./face_enhancer/enhance.py` to gain results <br>
 This is comparision in original(left), before face enhancement(median) and after(right)
-![](/result/39000_enhanced_full.png)
+![](/result/37500_enhanced_full.png)
+![](/result/37500_enhanced_head.png)
 * Run `make_gif.py` and make result pictures to gif picture
 
 ## Environments
