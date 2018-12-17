@@ -110,7 +110,7 @@ for idx in tqdm(range(200,400)):
         .transpose(1, 2, 0)
     heatmap[:, :, :-1] = r_heatmap
     param = {'thre1': 0.1, 'thre2': 0.05, 'thre3': 0.5}
-    label = get_pose(param, heatmap, paf)
+    label,_ = get_pose(param, heatmap, paf)
     cv2.imwrite(str(test_img_dir.joinpath('{:05}.png'.format(idx))), img)
     cv2.imwrite(str(test_label_dir.joinpath('{:05}.png'.format(idx))), label)
 
