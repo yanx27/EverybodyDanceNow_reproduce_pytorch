@@ -2,9 +2,6 @@
 
 Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including normalization and face enhancement parts.
 
-## Result
-![Result](/result/output.gif)
-
 ## Pre-trained models and source video
 * Download vgg19-dcbb9e9d.pth.crdownload and put it in `./src/pix2pixHD/models/`  <br>Link: https://pan.baidu.com/s/1XMZpSY_UOIwFbN1NXfKEpA   code：agum 
 
@@ -41,6 +38,8 @@ This is comparision in original (left), generated image before face enhancement 
 
 #### Gain results
 * Run `make_gif.py` and make result pictures to gif picture
+
+![Result](/result/output.gif)
 
 ## Environments
 Python 3.6.5 <br>
