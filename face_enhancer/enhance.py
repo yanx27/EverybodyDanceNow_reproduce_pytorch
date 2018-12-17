@@ -42,8 +42,8 @@ def torch2numpy(tensor):
     
 if __name__ == '__main__':
     torch.backends.cudnn.benchmark = True
-    dataset_dir = '../data/face_yxu'   # save test_sync in this folder
-    pose_name = '../data/target/pose_yx.npy' # coordinate save every heads
+    dataset_dir = '../data/face_yx_fang'   # save test_sync in this folder
+    pose_name = '../data/source/pose_source_norm.npy' # coordinate save every heads
     ckpt_dir = '../checkpoints/yxu_face'
     result_dir = './results'
     save_dir = dataset_dir+'/full_fake/'
