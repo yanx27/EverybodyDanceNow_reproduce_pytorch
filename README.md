@@ -3,7 +3,7 @@
 Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including normalization and face enhancement parts.
 
 ## Result
-![Result](output.gif)
+![Result](/result/output.gif)
 
 ## Pre-trained models and source video
 * Download vgg19-dcbb9e9d.pth.crdownload and put it in `./src/pix2pixHD/models/`  <br>Link: https://pan.baidu.com/s/1XMZpSY_UOIwFbN1NXfKEpA   code：agum 
@@ -22,7 +22,9 @@ Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including 
 * Run `normalization.py` rescale the label images, you can use two sample images from `./data/target/train/train_label/` and `./data/source/test_label_ori/` to complete normalization between two skeleton size
 * Run `transfer.py` and get results in `./result`
 * Create `./data/face/test_sync` and `./data/face/test_real`, then put the same person's generated pictures and the original pictures in them.
-* Run `./face_enhancer/main.py` train face enhancer and run`./face_enhancer/enhance.py` to gain results
+* Run `./face_enhancer/main.py` train face enhancer and run`./face_enhancer/enhance.py` to gain results <br>
+This is comparision in original(left), before face enhancement(median) and after(right)
+![](/result/39000_enhanced_full.png)
 * Run `make_gif.py` and make result pictures to gif picture
 
 ## Environments
