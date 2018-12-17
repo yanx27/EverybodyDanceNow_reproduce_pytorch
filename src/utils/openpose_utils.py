@@ -6,7 +6,7 @@ from scipy import ndimage
 
 # openpose
 import sys
-sys.path.append('E:\\Github\\pytorch-EverybodyDanceNow\\src\\PoseEstimation')
+sys.path.append('./PoseEstimation')
 
 from network.post import *
 
@@ -23,6 +23,7 @@ def remove_noise(img):
 
 def create_label(shape, joint_list, person_to_joint_assoc):
     label = np.zeros(shape, dtype=np.uint8)
+    cord_list = []
     for limb_type in range(17):
         for person_joint_info in person_to_joint_assoc:
             joint_indices = person_joint_info[joint_to_limb_heatmap_relationship[limb_type]].astype(int)
@@ -30,12 +31,13 @@ def create_label(shape, joint_list, person_to_joint_assoc):
                 continue
             joint_coords = joint_list[joint_indices, :2]
             coords_center = tuple(np.round(np.mean(joint_coords, 0)).astype(int))
+            cord_list.append(joint_coords[0])
             limb_dir = joint_coords[0, :] - joint_coords[1, :]
             limb_length = np.linalg.norm(limb_dir)
             angle = math.degrees(math.atan2(limb_dir[1], limb_dir[0]))
             polygon = cv2.ellipse2Poly(coords_center, (int(limb_length / 2), 4), int(angle), 0, 360, 1)
             cv2.fillConvexPoly(label, polygon, limb_type+1)
-    return label
+    return label,cord_list
 
 
 def get_pose(param, heatmaps, pafs):
@@ -58,6 +60,6 @@ def get_pose(param, heatmaps, pafs):
     person_to_joint_assoc = group_limbs_of_same_person(connected_limbs, joint_list)
 
     # (Step 4): plot results
-    label = create_label(shape, joint_list, person_to_joint_assoc)
+    label,cord_list = create_label(shape, joint_list, person_to_joint_assoc)
 
-    return label
+    return label, cord_list
