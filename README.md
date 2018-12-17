@@ -15,7 +15,7 @@ Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including 
 * Download pre-trained vgg_16 for face enhancement https://pan.baidu.com/s/1RrcLjEtl4yJ40-4h9sZaDQ  code：62y0 and put in `./face_enhancer/`
 
 ## Full process
-* Put source video mv.mp4 in `./data/source/` and run `make_source.py`, the label images will save in `./data/source/test_label_ori/` 
+* Put source video mv.mp4 in `./data/source/` and run `make_source.py`, the label images will save in `./data/source/test_label_ori/`. If you want to capture video by camera, you can directly run `./src/utils/save_img.py`
 * Put target video mv.mp4 in `./data/target/` and run `make_target.py`, `pose.npy` will save in `./data/target/`, which contain the coordinate of each face.
 * Run `train_pose2vid.py` and check loss and full training process in `./checkpoints/`
 * If you break the traning and want to continue last training, set `load_pretrain = './checkpoints/target/` in `./src/config/train_opt.py`
