@@ -20,7 +20,7 @@ import util.util as util
 from util.visualizer import Visualizer
 import src.config.train_opt as opt
 
-os.environ['CUDA_VISIBLE_DEVICES'] = "3"
+os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 torch.multiprocessing.set_sharing_strategy('file_system')
 torch.backends.cudnn.benchmark = True
 
