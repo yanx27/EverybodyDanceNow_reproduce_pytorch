@@ -42,6 +42,7 @@ This is comparision in original (left), generated image before face enhancement 
 ![Result](/result/output.gif)
 
 ## Environments
+Ubuntu 16.04 <br>
 Python 3.6.5 <br>
 Pytorch 0.4.1  <br>
 OpenCV 3.4.4  <br>
