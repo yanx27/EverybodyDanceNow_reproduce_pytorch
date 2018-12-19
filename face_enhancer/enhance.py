@@ -11,7 +11,7 @@ import numpy as np
 from PIL import Image
 from skimage.io import imsave
 from imageio import get_writer
-os.environ['CUDA_VISIBLE_DEVICES'] = "1"
+os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 image_transforms = transforms.Compose([
         Image.fromarray,
         transforms.ToTensor(),
