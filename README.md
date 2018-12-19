@@ -2,7 +2,7 @@
 
 Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including normalization and face enhancement parts.
 
---------------------------------------20181219--------------------------------------------
+--------------------------------------20181219-------------------------------------------- <br>
 If you are running code under Windows, you may need to make some changes yourself
 
 ## Pre-trained models and source video
