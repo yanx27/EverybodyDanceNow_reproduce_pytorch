@@ -1,8 +1,7 @@
 # EverybodyDanceNow reproduced in pytorch
 
-Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including normalization and face enhancement parts.
-
---20181219 <br>
+Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including normalization and face enhancement parts.<br>
+<br>
 If you need run code under Windows system, you may need to make some changes by yourself
 
 ## Pre-trained models and source video
