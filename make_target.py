@@ -7,7 +7,7 @@ from pathlib import Path
 import os
 import warnings
 warnings.filterwarnings('ignore')
-os.environ['CUDA_VISIBLE_DEVICES'] = "3"
+os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 
 openpose_dir = Path('./src/PoseEstimation/')
 
