@@ -2,6 +2,9 @@
 
 Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including normalization and face enhancement parts.
 
+--------------------------------------20181219--------------------------------------------
+If you are running code under Windows, you may need to make some changes yourself
+
 ## Pre-trained models and source video
 * Download vgg19-dcbb9e9d.pth.crdownload and put it in `./src/pix2pixHD/models/`  <br>Link: https://pan.baidu.com/s/1XMZpSY_UOIwFbN1NXfKEpA   code：agum 
 
