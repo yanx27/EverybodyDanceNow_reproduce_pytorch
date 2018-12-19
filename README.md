@@ -2,7 +2,7 @@
 
 Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including normalization and face enhancement parts.<br>
 <br>
-If you need run code under Windows system, you may need to make some changes by yourself
+We evaluate on Ubuntu 16.04, so if you need run code under Windows system, maybe you need to make some changes by yourself
 
 ## Pre-trained models and source video
 * Download vgg19-dcbb9e9d.pth.crdownload and put it in `./src/pix2pixHD/models/`  <br>Link: https://pan.baidu.com/s/1XMZpSY_UOIwFbN1NXfKEpA   code：agum 
