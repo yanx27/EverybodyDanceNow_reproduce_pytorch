@@ -14,7 +14,7 @@ from util.visualizer import Visualizer
 from util import html
 import src.config.test_opt as opt
 
-os.environ['CUDA_VISIBLE_DEVICES'] = "3"
+os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 iter_path = os.path.join(opt.checkpoints_dir, opt.name, 'iter.txt')
 
 data_loader = CreateDataLoader(opt)

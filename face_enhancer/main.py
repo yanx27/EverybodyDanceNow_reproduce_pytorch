@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader
 import torchvision.transforms as transforms
 from torch.backends import cudnn
 from PIL import Image
-os.environ['CUDA_VISIBLE_DEVICES'] = "3"
+os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 image_transforms = transforms.Compose([
         Image.fromarray,
         transforms.ToTensor(),
