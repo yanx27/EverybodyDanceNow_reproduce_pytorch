@@ -4,7 +4,7 @@ Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including 
 <br>
 We train and evaluate on Ubuntu 16.04, so if you don't have linux environment, you can set `nThreads=0` in `EverybodyDanceNow_reproduce_pytorch/src/config/train_opt.py`.
 
-## Reference By:
+## Reference:
 
 [Lotayou](https://github.com/Lotayou) everybody_dance_now_pytorch
 
