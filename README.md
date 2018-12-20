@@ -4,14 +4,20 @@ Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including 
 <br>
 We train and evaluate on Ubuntu 16.04, so if you don't have linux environment, you can set `nThreads=0` in `EverybodyDanceNow_reproduce_pytorch/src/config/train_opt.py`.
 
+## Reference:
+
+[Lotayou](https://github.com/Lotayou) everybody_dance_now_pytorch
+
+[nyoki-mtl](https://github.com/nyoki-mtl) pytorch-EverybodyDanceNow
+
 ## Pre-trained models and source video
-* Download vgg19-dcbb9e9d.pth.crdownload and put it in `./src/pix2pixHD/models/`  <br>Link: https://pan.baidu.com/s/1XMZpSY_UOIwFbN1NXfKEpA   code：agum 
+* Download vgg19-dcbb9e9d.pth.crdownload [here](https://drive.google.com/file/d/1JG-pLXkPmyx3o4L33rG5WMJKMoOjlXhl/view?usp=sharing) and put it in `./src/pix2pixHD/models/`  <br>
 
-* Download pose_model.pth and put it in `./src/PoseEstimation/network/weight/`   <br>Link: https://pan.baidu.com/s/1V68pNSzeaey9OCtVkO_f4Q   code：yf2x 
+* Download pose_model.pth [here](https://drive.google.com/file/d/1DDBQsoZ94N4NRKxZbwyEXt7Tz8KqgS_w/view?usp=sharing) and put it in `./src/PoseEstimation/network/weight/`   <br>
 
-* Source video can be download from ：https://pan.baidu.com/s/15_PJzFf-rRHMkwji9T20gQ  code：leos 
+* Source video can be download from [here](https://drive.google.com/file/d/1drRBJypNGqOZV9WFutEzDYXkEelUjZXh/view?usp=sharing)
 
-* Download pre-trained vgg_16 for face enhancement https://pan.baidu.com/s/1RrcLjEtl4yJ40-4h9sZaDQ  code：62y0 and put in `./face_enhancer/`
+* Download pre-trained vgg_16 for face enhancement [here](https://drive.google.com/file/d/180WgIzh0aV1Aayl_b1X7mIhVhDUcW3b1/view?usp=sharing) and put in `./face_enhancer/`
 
 ## Full process
 #### Pose2vid network
@@ -49,5 +55,4 @@ Python 3.6.5 <br>
 Pytorch 0.4.1  <br>
 OpenCV 3.4.4  <br>
 
-## Reference
-Reference by [pytorch-EverybodyDanceNow](https://github.com/nyoki-mtl/pytorch-EverybodyDanceNow),
+
