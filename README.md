@@ -49,5 +49,8 @@ Python 3.6.5 <br>
 Pytorch 0.4.1  <br>
 OpenCV 3.4.4  <br>
 
-## Reference
-Reference by [pytorch-EverybodyDanceNow](https://github.com/nyoki-mtl/pytorch-EverybodyDanceNow),
+## Other implementations:
+
+[Lotayou](https://github.com/Lotayou) everybody_dance_now_pytorch
+
+[nyoki-mtl](https://github.com/nyoki-mtl) pytorch-EverybodyDanceNow
