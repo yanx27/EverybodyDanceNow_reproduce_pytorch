@@ -4,6 +4,12 @@ Written by Peihuan Wu, Jinghong Lin, Yutao Liao, Wei Qing and Yan Xu, including 
 <br>
 We train and evaluate on Ubuntu 16.04, so if you don't have linux environment, you can set `nThreads=0` in `EverybodyDanceNow_reproduce_pytorch/src/config/train_opt.py`.
 
+## Other implementations:
+
+[Lotayou](https://github.com/Lotayou) everybody_dance_now_pytorch
+
+[nyoki-mtl](https://github.com/nyoki-mtl) pytorch-EverybodyDanceNow
+
 ## Pre-trained models and source video
 * Download vgg19-dcbb9e9d.pth.crdownload and put it in `./src/pix2pixHD/models/`  <br>Link: https://pan.baidu.com/s/1XMZpSY_UOIwFbN1NXfKEpA   code：agum 
 
@@ -49,8 +55,4 @@ Python 3.6.5 <br>
 Pytorch 0.4.1  <br>
 OpenCV 3.4.4  <br>
 
-## Other implementations:
 
-[Lotayou](https://github.com/Lotayou) everybody_dance_now_pytorch
-
-[nyoki-mtl](https://github.com/nyoki-mtl) pytorch-EverybodyDanceNow
