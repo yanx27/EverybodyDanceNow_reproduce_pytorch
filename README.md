@@ -49,6 +49,16 @@ This is comparision in original (left), generated image before face enhancement 
 
 ![Result](/result/output.gif)
 
+## ToDo
+
+- Pose estimation
+    - [x] Pose
+    - [x] Face
+    - [ ] Hand
+- [x] pix2pixHD
+- [x] FaceGAN
+- [ ] Temporal smoothing
+
 ## Environments
 Ubuntu 16.04 <br>
 Python 3.6.5 <br>
