@@ -6,9 +6,9 @@ We train and evaluate on Ubuntu 16.04, so if you don't have linux environment, y
 
 ## Reference:
 
-[Lotayou](https://github.com/Lotayou) everybody_dance_now_pytorch
-
 [nyoki-mtl](https://github.com/nyoki-mtl) pytorch-EverybodyDanceNow
+
+[Lotayou](https://github.com/Lotayou) everybody_dance_now_pytorch
 
 ## Pre-trained models and source video
 * Download vgg19-dcbb9e9d.pth.crdownload [here](https://drive.google.com/file/d/1JG-pLXkPmyx3o4L33rG5WMJKMoOjlXhl/view?usp=sharing) and put it in `./src/pix2pixHD/models/`  <br>
