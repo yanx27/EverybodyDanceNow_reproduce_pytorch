@@ -1,4 +1,3 @@
-# *_*coding:utf-8 *_*
 import os
 from pathlib import Path
 import cv2
