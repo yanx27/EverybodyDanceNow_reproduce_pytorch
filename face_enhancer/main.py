@@ -43,8 +43,8 @@ def main(is_debug):
 
     dataset_dir = '../data/face'
     pose_name = '../data/target/pose.npy'
-    ckpt_dir = '../checkpoints/yxu_face'
-    log_dir = '../checkpoints/yxu_face/logs'
+    ckpt_dir = '../checkpoints/face'
+    log_dir = '../checkpoints/face/logs'
     batch_num = 10
     batch_size = 10
 
