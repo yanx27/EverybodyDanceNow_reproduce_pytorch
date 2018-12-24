@@ -49,7 +49,7 @@ This is comparision in original (left), generated image before face enhancement 
 
 ![Result](/result/output.gif)
 
-## ToDo
+## TODO
 
 - Pose estimation
     - [x] Pose
