@@ -36,7 +36,7 @@ We train and evaluate on Ubuntu 16.04, so if you don't have linux environment, y
 
 ![](/result/pic2.png)
 #### Train and use face enhancement network
-* Create `./data/face/test_sync` and `./data/face/test_real`, then put the same person's generated pictures and the original pictures in them.
+* Run `./face_enhancer/prepare.py`, check the results in `./data/face/test_sync` and `./data/face/test_real`.
 * Run `./face_enhancer/main.py` train face enhancer and run`./face_enhancer/enhance.py` to gain results <br>
 This is comparision in original (left), generated image before face enhancement (median) and after enhancement (right). FaceGAN can learn the residual error between the real picture and the generated picture faces.
 
