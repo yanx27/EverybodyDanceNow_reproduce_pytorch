@@ -11,8 +11,8 @@ from pathlib import Path
 #     cv2.imwrite('./data/source/test_label_ori/{:05d}.png'.format(idx), img)
 
 
-target_img = cv2.imread('./data/target/train_yx2/train_label/00001.png')[:,:,0]
-target_img_rgb = cv2.imread('./data/target/train_yx2/train_img/00001.png')
+target_img = cv2.imread('./data/target/train/train_label/00001.png')[:,:,0]
+target_img_rgb = cv2.imread('./data/target/train/train_img/00001.png')
 source_img = cv2.imread('./data/target/train/train_label/00001.png')[:,:,0]
 source_img_rgb = cv2.imread('./data/target/train/train_img/00001.png')
 
