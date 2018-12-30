@@ -30,7 +30,6 @@ def load_models(directory):
         generator.load_state_dict(gen_dict)
         
     return generator.to(device)
-
     
 def torch2numpy(tensor):
         generated = tensor.detach().cpu().permute(1, 2, 0).numpy()
