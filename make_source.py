@@ -1,4 +1,3 @@
-'''Pose2pose'''
 '''Download and extract video'''
 import cv2
 from pathlib import Path
