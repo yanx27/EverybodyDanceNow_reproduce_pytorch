@@ -1,4 +1,3 @@
-'''Pose2pose'''
 '''Download and extract video'''
 import cv2
 from pathlib import Path
@@ -96,13 +95,13 @@ for idx in tqdm(range(len(os.listdir(str(img_dir))))):
            int(head_cord[0] - crop_size): int(head_cord[0] + crop_size), :]
     plt.imshow(head)
     plt.savefig(str(test_head_dir.joinpath('pose_{}.jpg'.format(idx))))
-
+    plt.clf()
     cv2.imwrite(str(test_img_dir.joinpath('{:05}.png'.format(idx))), img)
     cv2.imwrite(str(test_label_dir.joinpath('{:05}.png'.format(idx))), label)
     if idx % 100 == 0 and idx != 0:
         pose_cords_arr = np.array(pose_cords, dtype=np.int)
-        np.save(str((save_dir.joinpath('pose_yx.npy'))), pose_cords_arr)
+        np.save(str((save_dir.joinpath('pose_source.npy'))), pose_cords_arr)
 
 pose_cords_arr = np.array(pose_cords, dtype=np.int)
-np.save(str((save_dir.joinpath('pose_yx.npy'))), pose_cords_arr)
+np.save(str((save_dir.joinpath('pose_source.npy'))), pose_cords_arr)
 torch.cuda.empty_cache()

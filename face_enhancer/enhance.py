@@ -30,7 +30,6 @@ def load_models(directory):
         generator.load_state_dict(gen_dict)
         
     return generator.to(device)
-
     
 def torch2numpy(tensor):
         generated = tensor.detach().cpu().permute(1, 2, 0).numpy()
@@ -42,9 +41,9 @@ def torch2numpy(tensor):
     
 if __name__ == '__main__':
     torch.backends.cudnn.benchmark = True
-    dataset_dir = '../data/face_yx_fang'   # save test_sync in this folder
+    dataset_dir = '../data/face'   # save test_sync in this folder
     pose_name = '../data/source/pose_source_norm.npy' # coordinate save every heads
-    ckpt_dir = '../checkpoints/yxu_face'
+    ckpt_dir = '../checkpoints/face'
     result_dir = './results'
     save_dir = dataset_dir+'/full_fake/'
 

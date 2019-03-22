@@ -98,7 +98,7 @@ for idx in tqdm(range(len(os.listdir(str(img_dir))))):
            int(head_cord[0] - crop_size): int(head_cord[0] + crop_size), :]
     plt.imshow(head)
     plt.savefig(str(train_head_dir.joinpath('pose_{}.jpg'.format(idx))))
-
+    plt.clf()
     cv2.imwrite(str(train_img_dir.joinpath('{:05}.png'.format(idx))), img)
     cv2.imwrite(str(train_label_dir.joinpath('{:05}.png'.format(idx))), label)
 
